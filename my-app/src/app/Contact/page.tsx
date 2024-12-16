@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-import Navbar from "../component/Navbar";
+import Navbar from "../component/navbar";
 import Shopping from "../public/shopping.png"
 import Office from "../component/office"
 

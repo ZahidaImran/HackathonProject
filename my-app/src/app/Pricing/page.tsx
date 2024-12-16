@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Companies from "../component/comapnies"
 import FreeTrial from "../component/freeTrial";
-import Header from "../component/Navbar"
+import Navbar from "../component/navbar"
 
 // TypeScript Interface for Pricing Card Props
 interface PricingCardProps {
@@ -110,7 +110,7 @@ export default function PricingSection() {
 
   return (
     <>
-      <Header />
+      <Navbar />
       <section className="bg-gray-50 py-16 px-4">
         {/* Header Section */}
         <div className="max-w-7xl mx-auto text-center mb-12">

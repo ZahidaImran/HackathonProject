@@ -9,12 +9,12 @@ import user3 from "../public/team-user-3.jpg";
 import girl2 from "../public/wwu.png";
 import video from "../public/video.png";
 import Companies from "../component/comapnies"
-import Header from "../component/Navbar"
+import Navbar from "../component/navbar"
 
 export default function AboutUs() {
     return (
         <div>
-            <Header />
+            <Navbar />
             <div className="flex flex-col md:flex-row items-center justify-between px-4 py-8">
                 {/* Text Section */}
                 <div className="w-full text-center md:text-left md:w-1/2 md:ml-16">
