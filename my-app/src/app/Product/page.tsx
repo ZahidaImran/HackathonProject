@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import React from 'react';
 import { FiChevronRight } from 'react-icons/fi';
 import Header from '../component/Header';
