@@ -29,8 +29,8 @@ export default function HomeNavbar() {
                     </li>
                     <li><Link href="../AboutUS">About</Link></li>
                     <li><Link href="../Team">Team</Link></li>
-                    <li><Link href="../contact">Contact</Link></li>
-                    <li><Link href="/">Pages</Link></li>
+                    <li><Link href="../Contact">Contact</Link></li>
+                    <li><Link href="">Pages</Link></li>
                 </ul>
 
                 {/* Mobile Hamburger Menu */}
@@ -48,8 +48,8 @@ export default function HomeNavbar() {
                         <li><Link href="../Product">Shop</Link></li>
                         <li><Link href="../AboutUS">About</Link></li>
                         <li><Link href="../Team">Team</Link></li>
-                        <li><Link href="../contact">Contact</Link></li>
-                        <li><Link href="/">Pages</Link></li>
+                        <li><Link href="../Contact">Contact</Link></li>
+                        <li><Link href="">Pages</Link></li>
                     </ul>
                 )}
 

@@ -36,17 +36,17 @@ const Navbar = () => {
                 Home
               </li>
             </Link>
-            <Link href="/Product">
+            <Link href="../Product">
               <li className="cursor-pointer hover:text-[#23A6F0] transition-all">
                 Product
               </li>
             </Link>
-            <Link href="/Pricing">
+            <Link href="../Pricing">
               <li className="cursor-pointer hover:text-[#23A6F0] transition-all">
                 Pricing
               </li>
             </Link>
-            <Link href="/contact">
+            <Link href="../Contact">
               <li className="cursor-pointer hover:text-[#23A6F0] transition-all">
                 Contact
               </li>
@@ -102,17 +102,17 @@ const Navbar = () => {
               Home
             </li>
           </Link>
-          <Link href="/Product">
+          <Link href="../Product">
             <li className="cursor-pointer hover:text-[#23A6F0] transition-all">
               Product
             </li>
           </Link>
-          <Link href="/Pricing">
+          <Link href="../Pricing">
             <li className="cursor-pointer hover:text-[#23A6F0] transition-all">
               Pricing
             </li>
           </Link>
-          <Link href="/contact">
+          <Link href="../Contact">
             <li className="cursor-pointer hover:text-[#23A6F0] transition-all">
               Contact
             </li>
