@@ -1,4 +1,3 @@
-
 import Image from "next/image"
 import background from "./public/background.png"
 import Men from "./public/men.png"
@@ -20,6 +19,8 @@ import Car from "./public/car.png";
 import Umbrella from "./public/umbrella.png";
 import CardText from "./component/cards-text";
 import type { StaticImageData } from 'next/image';
+import HomeHeader from "./component/homeheader"; 
+import HomeNavbar from "./component/LoginNavbar"
 
 function ProductCardItem({ image, altText }: { image: StaticImageData; altText: string }) {
   return (
@@ -74,7 +75,10 @@ export default function Home() {
 
 
   return (
-    <div className="bg-white">
+    <div>
+      <HomeHeader/>
+      <HomeNavbar/>
+      <div className="bg-white">
       {/* New Collection */}
 <div className="relative w-full h-auto bg-white">
   <div className="relative w-full">
@@ -264,5 +268,7 @@ export default function Home() {
         </div>
       </div>
     </div>
+    </div>
+    
   );
 }

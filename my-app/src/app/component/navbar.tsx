@@ -1,78 +1,126 @@
-'use client';
-import { useState } from "react";
+"use client";
 import Link from "next/link";
-import { RiArrowDropDownLine } from "react-icons/ri";
-import { MdOutlineAccountCircle } from "react-icons/md";
-import { CiSearch, CiHeart } from "react-icons/ci";
-import { IoCartOutline } from "react-icons/io5";
+import React, { useState } from "react";
+import {
+  FiArrowRight,
+  FiMenu,
+  FiX,
+  FiSearch,
+  FiShoppingCart,
+} from "react-icons/fi";
 
-export default function Navbar() {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    return (
-        <nav className="max-w-[1437px] mx-auto px-4 flex justify-between items-center h-[58px] text-[#252B42] relative">
-            {/* Logo Section */}
-            <div className="text-2xl font-bold">Bandage</div>
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen((prevState) => !prevState);
+  };
 
-            {/* Desktop Navigation */}
-            <ul className="hidden md:flex space-x-6 text-sm font-bold">
-                <li><Link href="/">Home</Link></li>
-                <li className="flex items-center">
-                    <Link href="/">Shop</Link>
-                    <div className="text-lg">
-                        <RiArrowDropDownLine />
-                    </div>
-                    
-                </li>
-                <li><Link href="/">About</Link></li>
-                <li><Link href="/">Blog</Link></li>
-                <li><Link href="/">Contact</Link></li>
-                <li><Link href="/">Pages</Link></li>
-            </ul>
+  return (
+    <header className="bg-white shadow-md py-4">
+      <div className="container mx-auto flex items-center justify-between px-4">
+        {/* Logo */}
+        <div className="text-4xl font-bold text-[#252B42] mr-8">
+          {" "}
+          {/* Add mr-8 for margin-right */}
+          Bandage
+        </div>
 
-            {/* Mobile Hamburger Menu */}
-            <button
-                className="md:hidden text-2xl"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-                ☰
-            </button>
-
-            {/* Mobile Menu */}
-            {isMobileMenuOpen && (
-                <ul className="absolute top-[58px] left-0 w-full bg-white flex flex-col items-center space-y-4 p-4 shadow-lg z-10">
-                    <li><Link href="/">Home</Link></li>
-                    <li><Link href="/">Shop</Link></li>
-                    <li><Link href="/">About</Link></li>
-                    <li><Link href="/">Blog</Link></li>
-                    <li><Link href="/">Contact</Link></li>
-                    <li><Link href="/">Pages</Link></li>
-                </ul>
-            )}
-
-            {/* Account, Search, Cart, and Wishlist */}
-            <div className="flex space-x-4 items-center text-[#23A6F0]">
-                {/* Login */}
-                <button className="flex items-center gap-1">
-                    <MdOutlineAccountCircle />
-                    <span className="hidden md:inline text-sm">Login / Register</span>
-                </button>
-                {/* Search */}
-                <button className="text-lg">
-                    <CiSearch />
-                </button>
-                {/* Cart */}
-                <button className="text-lg relative">
-                    <IoCartOutline />
-                    <span className="absolute top-0 right-0 text-xs rounded-full px-1">1</span>
-                </button>
-                {/* Wishlist */}
-                <button className="text-lg relative">
-                    <CiHeart />
-                    <span className="absolute top-0 right-0 text-xs rounded-full px-1">1</span>
-                </button>
-            </div>
+        {/* Navbar (Desktop) */}
+        <nav className="hidden md:flex flex-row items-center gap-8 text-[14px] text-[#737373] font-bold ml-20">
+          <ul className="list-none flex gap-8 text-lg">
+            {" "}
+            {/* Add list-none here to remove dots */}
+            <Link href="/">
+              <li className="cursor-pointer hover:text-[#23A6F0] transition-all">
+                Home
+              </li>
+            </Link>
+            <Link href="/Product">
+              <li className="cursor-pointer hover:text-[#23A6F0] transition-all">
+                Product
+              </li>
+            </Link>
+            <Link href="/Pricing">
+              <li className="cursor-pointer hover:text-[#23A6F0] transition-all">
+                Pricing
+              </li>
+            </Link>
+            <Link href="/contact">
+              <li className="cursor-pointer hover:text-[#23A6F0] transition-all">
+                Contact
+              </li>
+            </Link>
+          </ul>
         </nav>
-    );
-}
 
+        {/* Icons and Buttons */}
+        <div className="flex items-center gap-4 ml-auto">
+          {/* Search Icon (Hidden on desktop) */}
+          <button className="md:hidden flex items-center justify-center p-2  text-[#252B42] hover:text-[#23A6F0] hover:border-[#23A6F0] transition-all">
+            <FiSearch size={20} />
+          </button>
+
+          {/* Add to Cart Icon (Hidden on desktop) */}
+          <button className="md:hidden flex items-center justify-center p-2 text-[#252B42] hover:text-[#23A6F0] hover:border-[#23A6F0] transition-all">
+            <FiShoppingCart size={20} />
+          </button>
+
+          {/* Login Button (Hidden on mobile) */}
+          <button className="hidden md:block px-4 py-2 text-[#23A6F0] rounded hover:bg-[#23A6F0] font-bold hover:text-white transition-all">
+            Login
+          </button>
+
+          {/* Become a member Button (Hidden on mobile) */}
+          <button className="hidden md:flex items-center gap-2 px-4 py-3 bg-[#23A6F0] text-[#FAFAFA] rounded-md hover:bg-blue-500 transition-all">
+            Become a member
+            <div className="text-lg" >
+                <FiArrowRight/>
+            </div>
+          </button>
+
+          {/* Mobile Hamburger Menu (Appears at the end on mobile) */}
+          <div className="md:hidden flex items-center">
+            <button onClick={toggleMobileMenu} className="text-[#252B42]">
+              {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu (Appears when hamburger icon is clicked) */}
+      <div
+        className={`md:hidden ${
+          isMobileMenuOpen ? "block" : "hidden"
+        } bg-white shadow-md mt-4 px-4 py-6 flex justify-center items-center x`}
+      >
+        <ul className="list-none flex flex-col gap-4 text-[20px] text-[#737373] font-bold">
+          {" "}
+          {/* Add list-none here too */}
+          <Link href="/">
+            <li className="cursor-pointer hover:text-[#23A6F0] transition-all">
+              Home
+            </li>
+          </Link>
+          <Link href="/Product">
+            <li className="cursor-pointer hover:text-[#23A6F0] transition-all">
+              Product
+            </li>
+          </Link>
+          <Link href="/Pricing">
+            <li className="cursor-pointer hover:text-[#23A6F0] transition-all">
+              Pricing
+            </li>
+          </Link>
+          <Link href="/contact">
+            <li className="cursor-pointer hover:text-[#23A6F0] transition-all">
+              Contact
+            </li>
+          </Link>
+        </ul>
+      </div>
+    </header>
+  );
+};
+
+export default Navbar;
