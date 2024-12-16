@@ -5,13 +5,13 @@ import Image2 from "../public/image-2.png"
 import Image3 from "../public/image-3.png"
 import Image4 from "../public/image-4.png"
 import Image5 from "../public/image-5.png"
-import Header from "../component/Navbar";
+import Navbar from "../component/Navbar";
 import TeamSection from "../component/team-section"
 
 export default function Team() {
   return (
     <div>
-      <Header />
+      <Navbar />
       <div className="text-center py-10">
       <h2 className="text-[#737373] font-bold text-[16px] mt-5">WHAT WE DO</h2>
       <h1 className="text-[58px] font-bold mt-3 text-[#252B42]">

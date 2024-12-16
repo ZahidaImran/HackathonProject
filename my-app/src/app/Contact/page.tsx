@@ -2,14 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-import Header from "../component/Navbar"
+import Navbar from "../component/Navbar";
 import Shopping from "../public/shopping.png"
 import Office from "../component/office"
 
 const ContactUs = () => {
     return (
         <div>
-            <Header />
+            <Navbar />
             <div className="flex flex-col md:flex-row items-center justify-between px-4 py-8">
                 {/* Text Section */}
                 <div className="w-full text-center md:text-left md:w-1/2 md:ml-16">
